@@ -4,9 +4,9 @@
 Ce projet implémente **un générateur uniforme d'arbres hexabinaires**, une classe d'arbres où **chaque nœud interne a soit 0, 2 ou 6 enfants**.  
 
 L'algorithme est basé sur **la série génératrice** des arbres hexabinaires :  
-\[
-H(z) = 1 + z \cdot H(z)^2 + z \cdot H(z)^6
-\]
+
+$`H(z) = 1 + z*H(z)^2 + z*H(z)^6 `$
+
 Nous utilisons également **une correspondance avec des chemins combinatoires**.
 
 ---
