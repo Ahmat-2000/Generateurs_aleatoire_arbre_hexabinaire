@@ -36,9 +36,3 @@ Les méthodes implémentées sont inspirées des travaux suivants :
 
 ---
 
-## 🚀 Installation
-
-### **1️⃣ Cloner le projet**
-```bash
-git clone https://github.com/ton-repository.git
-cd ton-repository
