@@ -13,9 +13,9 @@ class HexabinaryTree:
     :param is_leaf: Indique si le nœud est une feuille. Par défaut, il s'agit d'une feuille.
     """
     self.is_leaf = is_leaf  
-    self.children = []      # Liste des enfants du nœud
-    self.nb_children = 0    # Nombre d'enfants (0, 2 ou 6)
-    self.size = 0         # Taille (nombre de nœuds internes)
+    self.children = []      
+    self.nb_children = 0    
+    self.size = 0  
 
   def __str__(self) -> str:
     """
@@ -133,5 +133,5 @@ if __name__ == "__main__":
   root.add_children([node1, node2])
 
   print(root)
-  print("\n##################################\n")
-  print(coefficients_hexa_tree(10))
+  print("\nLes 10 premiers nombres des arbres Hexabinaire\n")
+  print(coefficients_hexa_tree(9))

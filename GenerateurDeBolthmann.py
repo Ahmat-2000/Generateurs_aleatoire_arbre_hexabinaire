@@ -33,7 +33,7 @@ class BoltzmannGenerator:
         Génère un arbre hexabinaire aléatoire selon la distribution Boltzmann pour le paramètre z.
         """
         if z > self.radius:
-            raise ValueError("Erreur : le paramètre z dépasse le rayon de convergence.")
+            raise ValueError(f"Erreur : le paramètre z dépasse le rayon de convergence r = {self.radius}")
 
         y = self.generating_series(z)
         # self.H2 = y**2
@@ -70,7 +70,9 @@ class BoltzmannGenerator:
 if __name__ == "__main__":
     generator = BoltzmannGenerator()
     print(generator.radius)
-    z = 0.01  # Choisir une valeur pour z
+    rayon_de_convergence = 0.04651941284485908
+    # z doit être plus petit ou égale que le rayon_de_convergence
+    z = 0.04 # entre 0 et 0.0465
     n = 5
     arbre = generator.tree_of_size_n(z,n)
     print(f"Arbre hexabinaire généré : {arbre}")
