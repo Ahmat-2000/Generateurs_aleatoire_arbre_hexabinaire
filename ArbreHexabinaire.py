@@ -12,7 +12,7 @@ class HexabinaryTree:
 
     :param is_leaf: Indique si le nœud est une feuille. Par défaut, il s'agit d'une feuille.
     """
-    self.is_leaf = is_leaf  # Indique si le nœud est une feuille
+    self.is_leaf = is_leaf  
     self.children = []      # Liste des enfants du nœud
     self.nb_children = 0    # Nombre d'enfants (0, 2 ou 6)
     self.size = 0         # Taille (nombre de nœuds internes)
@@ -107,12 +107,10 @@ def compute_coefficient(n: int ) -> int:
   Paramètre : n (int) : Taille des arbres hexabinaires (doit être >= 0).
   Retourne : int : Le coefficient correspondant à la taille n dans la série génératrice.
   """
-  # Cas de base : si n est 0, le coefficient est 1 (arbre vide).
   if n == 0:
     return 1
   s = 0
   for k in range(n+1):
-    # - math.comb(n, k) : Choix de k parmi n.
     s += math.comb(n, k) * math.comb(2*n + 4*k, n + 4*k + 1)
   return s // n
 
@@ -125,25 +123,15 @@ def coefficients_hexa_tree(n : int) -> list[int]:
   return [compute_coefficient(i) for i in range(n+1)]
 
 if __name__ == "__main__":
-  # Création de l'arbre hexabinaire
   root = HexabinaryTree()  # Racine
   node1 = HexabinaryTree()  # Premier nœud enfant de la racine
   node2 = HexabinaryTree()  # Deuxième nœud enfant de la racine
   node3 = HexabinaryTree()  # Nœud enfant de node1
-
-  # Ajout des enfants à node3 (6 feuilles)
   node3.add_children([HexabinaryTree() for _ in range(6)])
-  
-  # Ajout des enfants à node2 (6 feuilles)
   node2.add_children([HexabinaryTree() for _ in range(6)])
-  
-  # Ajout des enfants à node1 (1 feuille et node3)
   node1.add_children([HexabinaryTree(), node3])
-  
-  # Ajout des enfants à la racine (node1 et node2)
   root.add_children([node1, node2])
 
-  # Affichage de l'arbre et de sa taille
   print(root)
   print("\n##################################\n")
   print(coefficients_hexa_tree(10))
