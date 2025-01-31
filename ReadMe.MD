@@ -1,6 +1,7 @@
-# 🌳 Génération Uniforme d'Arbres Hexabinaires  
+# 🌳 Génération Uniforme d'Arbres Hexabinaires
 
 ## 📌 Présentation
+
 Ce projet implémente **un générateur uniforme d'arbres hexabinaires**, une classe d'arbres où **chaque nœud interne a soit 0, 2 ou 6 enfants**.  
 
 L'algorithme est basé sur **la série génératrice** des arbres hexabinaires :  
@@ -11,7 +12,7 @@ Nous utilisons également **une correspondance avec des chemins combinatoires**.
 
 ---
 
-## 📖 Ressources  
+## 📖 Ressources
 
 Les méthodes implémentées sont inspirées des travaux suivants :  
 
@@ -35,4 +36,3 @@ Les méthodes implémentées sont inspirées des travaux suivants :
 - ✅ **Utilisation d'une approche récursive pour le parcours et la construction**.
 
 ---
-
